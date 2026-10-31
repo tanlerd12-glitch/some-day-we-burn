@@ -24,8 +24,8 @@
 
     // ---------------------------------------------------------------- CONFIG
     var CFG = {
-        compName:     "ฉาก2_INCEPTION_CAM",   // ฉาก2_INCEPTION_CAM
-        sourceName:   "ฉาก2_blocking",        // ฉาก2_blocking (ใช้ถ้าไม่ได้เลือกคอมพ์)
+        compName:     "\u0E09\u0E32\u0E012_INCEPTION_CAM",   // ฉาก2_INCEPTION_CAM
+        sourceName:   "\u0E09\u0E32\u0E012_blocking",        // ฉาก2_blocking (ใช้ถ้าไม่ได้เลือกคอมพ์)
         duration:     10,       // วินาที
         straightLen:  3800,     // ความยาวช่วงทางตรง (px)
         bendLen:      6500,     // ความยาวช่วงโค้งงอ (px)
@@ -101,7 +101,7 @@
         if (byName) sources.push(byName);
     }
     if (!sources.length) {
-        alert("INCEPTION CAM:\nOpen the scene comp (e.g. ฉาก2_blocking) or select scene comps in the Project panel, then run again.");
+        alert("INCEPTION CAM:\nOpen the scene comp (e.g. \u0E09\u0E32\u0E012_blocking) or select scene comps in the Project panel, then run again.");
         return;
     }
     var ref = sources[0];
@@ -158,7 +158,7 @@
             var src = sources[p % sources.length];
             var s = CFG.firstPanel + p * CFG.panelSpacing;
             var L = comp.layers.add(src);
-            L.name = "PANEL_" + (p < 9 ? "0" : "") + (p + 1) + " · " + src.name;
+            L.name = "PANEL_" + (p < 9 ? "0" : "") + (p + 1) + " \u00B7 " + src.name;
             L.threeDLayer = true;
             L.transform.scale.setValue([CFG.panelScale, CFG.panelScale, CFG.panelScale]);
             L.transform.position.setValue(posAt(s));
@@ -234,9 +234,9 @@
 
         // ------------------------------------------------------------ MARKERS
         try {
-            comp.markerProperty.setValueAtTime(0, new MarkerValue("REAL · กล้องวิ่งตาม"));
+            comp.markerProperty.setValueAtTime(0, new MarkerValue("REAL \u00B7 \u0E01\u0E25\u0E49\u0E2D\u0E07\u0E27\u0E34\u0E48\u0E07\u0E15\u0E32\u0E21"));
             if (dreamT >= 0)
-                comp.markerProperty.setValueAtTime(dreamT, new MarkerValue("INCEPTION · ในความฝัน"));
+                comp.markerProperty.setValueAtTime(dreamT, new MarkerValue("INCEPTION \u00B7 \u0E43\u0E19\u0E04\u0E27\u0E32\u0E21\u0E1D\u0E31\u0E19"));
         } catch (eM) {}
 
         // ------------------------------------------------------------ RENDER QUEUE
